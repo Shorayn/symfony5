@@ -10,7 +10,7 @@ class QuestionController extends AbstractController
 {
     /**
      *
-     * @Route("/")
+     * @Route("/", name="app_homepage")
      *
      * @return Response
      */
@@ -23,7 +23,7 @@ class QuestionController extends AbstractController
 
 
     /**
-     * @Route("/questions/{slug}")
+     * @Route("/question/{slug}", name="app_question_show")
      *
      * @return Response
      */
@@ -37,7 +37,7 @@ class QuestionController extends AbstractController
         ];
         
         dump($this);
-        return $this->render('questions/show.html.twig',[
+        return $this->render('question/show.html.twig',[
             'question' => ucwords(str_replace('-', ' ', $slug)),
             'answers' => $answers
         ]);
